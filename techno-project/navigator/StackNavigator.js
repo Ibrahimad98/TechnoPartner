@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { Image } from "react-native";
+import { Image, StyleSheet } from "react-native";
 
 import LoginScreen from "../screens/LoginScreen.js";
 import HomeScreen from "../screens/HomeScreen.js";
@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 
 function BottomTabNavigator() {
   return (
-    <Tab.Navigator defaultScreeonOptions={HomeScreen}>
+    <Tab.Navigator defaultScreeonOptions={HomeScreen} screenOptions={{ headerShown: false }}>
       <Tab.Screen
         name="Home"
         component={HomeScreen}
@@ -33,12 +33,13 @@ function BottomTabNavigator() {
 
 function StackNavigator() {
   return (
-    <Stack.Navigator defaultScreenOptions={LoginScreen}>
+    <Stack.Navigator defaultScreenOptions={LoginScreen} screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Home" component={BottomTabNavigator} options={{ headerShown: false }} />
+      <Stack.Screen name="Home" component={BottomTabNavigator} />
     </Stack.Navigator>
   );
-  
 }
+
+
 
 export default StackNavigator;

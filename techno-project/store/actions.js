@@ -1,4 +1,4 @@
-const localhost = "https://ritzy-donkey-production.up.railway.app";
+const localhost = "https://soal.staging.id";
 
 export const fetchPost = () => {
   console.log("masuk fetch post");
